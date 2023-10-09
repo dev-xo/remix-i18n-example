@@ -1,0 +1,113 @@
+/*
+* TailwindCSS.
+* Docs: https://tailwindcss.com/docs/guides/remix
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --text-primary: #000;
+  --background-primary: #fff;
+
+  --us-flag: linear-gradient(to right, #b22234, #dd4f43, #ffffff, #6b8eaa, #3c3b6e);
+  --es-flag: linear-gradient(to right, #c60c30, #ff4500, #ffa500, #ffc400);
+  --de-flag: linear-gradient(
+    to right,
+    #000000,
+    #4b0082,
+    #8b0000,
+    #dd0000,
+    #ff8c00,
+    #ffce00
+  );
+  --jp-flag: linear-gradient(to right, #ffffff, #f08080, #fa8072, #e9967a, #bc002d);
+  --cn-flag: linear-gradient(to right, #de2910, #ff4500, #ffa500, #ffde00);
+}
+
+/*
+* Placeholder CSS.
+*/
+body {
+  height: 100vh;
+  width: 100%;
+
+  color: var(--text-primary);
+  font-size: 14px;
+  font-weight: 400;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
+  background-color: var(--background-primary);
+
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input:focus {
+  outline: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/*
+* Custom Background.
+*/
+.blobs {
+  opacity: 0.35;
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  max-height: 400px;
+  max-width: 640px;
+  width: 100%;
+  height: 100%;
+  background: var(--us-flag);
+  filter: blur(100px) saturate(150%);
+  z-index: -1;
+}
+
+.blobs.--us-flag {
+  background: var(--us-flag);
+}
+
+.blobs.--es-flag {
+  background: var(--es-flag);
+}
+
+.blobs.--de-flag {
+  background: var(--de-flag);
+}
+
+.blobs.--jp-flag {
+  background: var(--jp-flag);
+}
+
+.blobs.--cn-flag {
+  background: var(--cn-flag);
+}
+
+@layer utilities {
+  .actionable {
+    cursor: pointer;
+    @apply transition-all duration-200 active:scale-90;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .scalable {
+    cursor: pointer;
+    @apply transition-all duration-200 hover:scale-110 active:scale-90;
+  }
+}

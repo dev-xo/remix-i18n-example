@@ -39,6 +39,9 @@ Run the server:
 npm run dev
 ```
 
+> **Note**
+> If you are using `pnpm` instead, the following packages must be added to `serverDependenciesToBundle`: `remix-i18next`, `accept-language-parser`, `intl-parse-accept-language`.
+
 Ready to go! 🎉
 
 ## Resources
